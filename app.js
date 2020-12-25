@@ -48,6 +48,7 @@ modalCloseButton.classList.add("close-button");
 modalCloseButton.innerHTML = "&times;"
 
 modalIframe.classList.add("modal-body");
+modalIframe.setAttribute("allowfullscreen", "true");
 overlay.id = "overlay";
 
 downloadButton.innerText = "Download";
@@ -74,9 +75,14 @@ document.body.addEventListener("click", function(e){
         };
         overlay.classList.add("active");
         document.body.appendChild(modalContainer);
-    } else {
-        return;
-    }
+        
+    } else if(e.target.hasAttribute("data-mega-id")) {
+        modalTitle.textContent = e.target.innerText;
+        modalIframe.src = `https://mega.nz/embed/${e.target.getAttribute("data-mega-id")}`;
+        downloadButton.style.display = "none";
+        overlay.classList.add("active");
+        document.body.appendChild(modalContainer);
+    } else return;
 });
 
 modalCloseButton.addEventListener("click", closeModal);
@@ -85,7 +91,6 @@ overlay.addEventListener("click", closeModal);
 function closeModal(e){
     document.body.removeChild(modalContainer);
     overlay.classList.remove('active');
-    if(e.target.classList.contains("dropbox-embed")) e.target.classList.remove("dropbox-embed");	  
 }
 
 /*X-------------------------------------Modal-------------------------------------------X*/
