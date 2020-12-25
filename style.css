@@ -1,0 +1,281 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Adjusted Font size */
+html {
+    font-size: 16px;
+}
+  @media screen and (min-width: 320px) {
+    html {
+      font-size: calc(16px + 6 * ((100vw - 320px) / 680));
+    }
+}
+  @media screen and (min-width: 1000px) {
+    html {
+      font-size: 22px;
+    }
+}
+
+/* body {
+  height: 1800px;
+} */
+
+/* ----------------------------Header---------------------------- */
+.header{
+  position: relative;
+  height: 500px;
+  width: 100%;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,1)), url("images/corona.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  align-items: center;
+  padding: 0 50px 0 100px;
+}
+
+.text{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e6e6e6;
+  text-align: center;
+}
+
+.text h1{
+  position: absolute;
+  top: 30%;
+  left: 0%;
+  font-size: 3em;
+  width: 100%;
+}
+
+.text h2 {
+  position: absolute;
+  top: 70%;
+  left: 0%;
+  font-size: 2em;
+  width: 100%;
+}
+
+.text h2 span {
+  font-size: 2.5em;
+  color: #e94b0d;
+}
+/* ----------- Name----------------- */
+.name {
+  position: sticky;
+  top: 0;
+  left: 0%;
+  height: 50px;
+  width: 100%;
+  background-color: #1b1b1b;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.name a {
+  text-decoration: none;
+  color: #fff;
+  display: block;
+  width: 100%;
+}
+/* X------------Name-----------------X */
+/* X-----------------------------Header-------------------------------X */
+
+/* ------------------------------Sidebar------------------------------*/
+/* -------------Sidebar-Button--------------- */
+.btn{
+    position: absolute;
+    top: 0;
+    left: 20px;
+    margin-top: 10px;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    background-color: #1b1b1b;
+    opacity: 0.7;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: left 0.4s ease;
+}
+.btn.click{
+    left: 260px;
+}
+.btn span{
+    color: white;
+    font-size: 28px;
+    line-height: 45px;
+}
+.btn.click span:before{
+    content: '\f00d';
+}
+/* X-------------Sidebar-Button---------------X */
+
+
+/* -------------Sidebar-Menu--------------- */
+.sidebar{
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    left: -250px;
+    background: #1b1b1b;
+    transition: left 0.4s ease;
+    z-index: 2;
+    opacity: 0.9;
+}
+
+.sidebar.show{
+  left: 0px;
+  width: 250px;
+  height: 100%;
+}
+
+nav ul{
+  background: #1b1b1b;
+  width: 100%;
+  list-style: none;
+}
+
+nav ul li{
+  line-height: 60px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+nav ul li:last-child{
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+nav ul li a{
+  position: relative;
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  padding-left: 40px;
+  font-weight: 500;
+  display: block;
+  width: 100%;
+  border-left: 3px solid transparent;
+}
+
+nav ul li.active a{
+  color: #fc7e17;
+  background: #1e1e1e;
+  border-left-color: #fc7e17;
+}
+
+nav ul li a:hover{
+  background: #1e1e1e;
+}
+
+nav ul ul{
+  position: static;
+  display: none;
+}
+
+nav ul .material-show.show{
+  display: block;
+}
+
+nav ul ul li{
+  line-height: 35px;
+  border-top: none;
+}
+
+nav ul ul li a{
+  font-size: 20px;
+  color: #e6e6e6;
+  padding-left: 80px;
+}
+
+nav ul li.active ul li a{
+  color: #e6e6e6;
+  background: #1b1b1b;
+  border-left-color: transparent;
+}
+
+nav ul ul li a:hover{
+  color: #fc7e17!important;
+  background: #1e1e1e!important;
+}
+
+nav ul li a span{
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 22px;
+  transition: transform 0.4s;
+}
+
+nav ul li a span.rotate{
+  transform: translateY(-50%) rotate(-180deg);
+}
+/* X-------------Sidebar-Menu---------------X */
+/*X---------------------------Sidebar----------------------------------X*/
+
+/* ------------------Content----------------------- */
+.content {
+  width: 100%;
+}
+
+.content li {
+  margin: 10%;
+  list-style-type: none;
+  font-size: 1.2em;
+  width: 90%;
+}
+
+.sub-content {
+  font-size: 0.8em;
+}
+
+.sub-content li {
+  margin: 4%;
+  list-style-type: none;
+  font-size: 0.8em;
+  width: 90%;
+}
+.sub-content li:hover {
+  color: #fc7e17;
+  text-shadow: 2px 2px 3px #e69b5f;
+}
+/* X------------------Content-----------------------X */
+
+/* ----------------------Footer--------------------------------------------- */
+.footer {
+  /* position: absolute; */
+  /* top: 1800px; */
+  left: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #1b1b1b;
+  color: #fff;
+  font-size: 0.5rem;
+  padding: 20px;
+  text-align: center;
+}
+/* X----------------------Footer---------------------------------------------X */
+
+/* for mobile */
+@media only screen and (max-width: 768px) {
+  .text h1 {
+    font-size: 1.6em;
+  }
+  .text h2 {
+    top: 60%;
+    font-size: 1.2em;
+  }
+  .content li {
+    font-size: 1em;
+    width: 80%;
+    margin-top: 40px;
+  }
+}
