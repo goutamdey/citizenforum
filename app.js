@@ -75,11 +75,13 @@ document.body.addEventListener("click", function(e){
         };
         overlay.classList.add("active");
         document.body.appendChild(modalContainer);
-        
+
     } else if(e.target.hasAttribute("data-mega-id")) {
         modalTitle.textContent = e.target.innerText;
         modalIframe.src = `https://mega.nz/embed/${e.target.getAttribute("data-mega-id")}`;
-        downloadButton.style.display = "none";
+        downloadButton.onclick = function(){
+            window.open(`https://mega.nz/file/${e.target.getAttribute("data-mega-id")}`, '_blank');
+        };
         overlay.classList.add("active");
         document.body.appendChild(modalContainer);
     } else return;
